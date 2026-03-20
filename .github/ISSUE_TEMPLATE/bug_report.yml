@@ -1,0 +1,57 @@
+name: "Bug Report"
+description: "Signaler un bug ou un calcul incorrect"
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps de signaler ce bug !
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Catégorie"
+      options:
+        - "Calcul fiscal incorrect"
+        - "Affichage / UI"
+        - "Simulateur interactif"
+        - "Plan d'optimisation"
+        - "Paiement / Stripe"
+        - "Autre"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description du bug"
+      description: "Décris ce qui ne va pas. Si c'est un calcul incorrect, précise le statut et les montants."
+      placeholder: "Ex: En EURL IS avec 100K de CA, l'IR affiché est de 5000€ alors qu'il devrait être 0€ car je n'ai pas de salaire."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Étapes pour reproduire"
+      description: "Comment reproduire le bug ?"
+      placeholder: |
+        1. Aller sur /simulateur
+        2. Entrer 100 000€ de CA, activité dev
+        3. Cliquer sur Simuler
+        4. Voir le résultat EURL IS
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Comportement attendu"
+      placeholder: "Ex: L'IR devrait être 0€ en full dividendes"
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: "Contexte supplémentaire"
+      description: "Screenshots, URL de simulation, navigateur, etc."
+      placeholder: "URL: /resultats?p=... | Navigateur: Chrome 120 | Mobile: non"
+    validations:
+      required: false

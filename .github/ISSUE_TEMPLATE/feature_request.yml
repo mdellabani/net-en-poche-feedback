@@ -1,0 +1,46 @@
+name: "Feature Request"
+description: "Proposer une amélioration ou une nouvelle fonctionnalité"
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci pour ta suggestion !
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Catégorie"
+      options:
+        - "Nouveau statut / régime fiscal"
+        - "Nouveau levier d'optimisation"
+        - "Amélioration du simulateur"
+        - "Amélioration de l'UI / UX"
+        - "Nouveau calcul (ARE, PUMA, etc.)"
+        - "Export / PDF / Email"
+        - "Autre"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Décris la fonctionnalité que tu aimerais voir."
+      placeholder: "Ex: Ajouter la possibilité de comparer SASU vs SCI pour de l'investissement immobilier."
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: "Motivation"
+      description: "Pourquoi cette fonctionnalité serait utile ?"
+      placeholder: "Ex: Beaucoup de freelances ont aussi une activité immobilière et veulent optimiser les deux ensemble."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considérées"
+      description: "As-tu envisagé d'autres solutions ?"
+    validations:
+      required: false
